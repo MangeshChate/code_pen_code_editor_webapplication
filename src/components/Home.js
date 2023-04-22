@@ -25,7 +25,7 @@ export default function Home() {
     </div>
     
       <div className="row d-flex justify-content-center flex-wrap">
-        <div className="col-lg-4 col-md-12 col-sm-12 ">
+        <div className="col-lg-4 col-md-12 col-sm-12 mt-3">
           <div className=" bg-light text-info-emphasis rounded-4 shadow" style={{ height: "30rem", border: "2px solid grey" }}>
             <div className="container-fluid bg-dark text-light rounded-top-3 p-2 ">
 
@@ -39,7 +39,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col-lg-4 col-md-12 col-sm-12">
+        <div className="col-lg-4 col-md-12 col-sm-12 mt-3">
           <div className=" bg-light text-info-emphasis rounded-4 shadow" style={{ height: "30rem", border: "2px solid grey" }}>
             <div className="container-fluid bg-dark text-light rounded-top-3 p-2 ">
 
@@ -53,7 +53,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col-lg-4 col-md-12 col-sm-12 ">
+        <div className="col-lg-4 col-md-12 col-sm-12 mt-3">
           <div className=" bg-light text-info-emphasis rounded-4 shadow" style={{ height: "30rem", border: "2px solid grey" }}>
             <div className="container-fluid bg-dark text-light rounded-top-3 p-2 ">
 
