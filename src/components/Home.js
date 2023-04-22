@@ -11,11 +11,7 @@ export default function Home() {
       output.contentDocument.body.innerHTML = html + "<style>" + css + "</style>";
       output.contentWindow.eval(js);
 
-  function clear(){
-    sethtml('')
-    setcss('')
-    setjs('')
-  }
+ 
   return (
     <div className='container-fluid mt-4 ' >
     <div className='justify-content-end d-flex'>
