@@ -80,10 +80,10 @@ export default function Home() {
 
 
           </div>
-          <div className="container-fluid">
-          <iframe id="output" ref={iframeRef}></iframe>
+         
+          <iframe className='container-fluid' style={{height:"26rem"}} id="output" ref={iframeRef}></iframe>
 
-          </div>
+        
         </div>
 
     
