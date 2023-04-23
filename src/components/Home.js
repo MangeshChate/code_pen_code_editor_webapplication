@@ -1,17 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState , useRef, useEffect} from 'react'
 
 export default function Home() {
 
-  const [html ,sethtml] = useState('')
-  const [css ,setcss] = useState('')
-  const [js ,setjs] = useState('')
+  
+  const [html, setHtml] = useState('');
+  const [css, setCss] = useState('');
+  const [js, setJs] = useState('');
+
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+    const outputDoc = iframeRef.current.contentDocument;
+    outputDoc.body.innerHTML = html + '<style>' + css + '</style>';
+    outputDoc.defaultView.eval(js);
+  }, [html, css, js]);
 
 
-      const output = document.getElementById('output');
-      output.contentDocument.body.innerHTML = html + "<style>" + css + "</style>";
-      output.contentWindow.eval(js);
-
- 
+  
   return (
     <div className='container-fluid mt-4 ' >
     <div className='justify-content-end d-flex'>
@@ -30,7 +35,7 @@ export default function Home() {
 
             </div>
             <div className='container-fluid'>
-              <textarea rows="17" className='form-text form-control bg-light container-fluid border-0 rounded-0 outline-none w-100 ' onChange={(e)=>{sethtml(e.target.value)}} ></textarea>
+              <textarea rows="17" className='form-text form-control bg-light container-fluid border-0 rounded-0 outline-none w-100 ' onChange={(e)=>{setHtml(e.target.value)}} ></textarea>
 
             </div>
           </div>
@@ -44,7 +49,7 @@ export default function Home() {
 
             </div>
             <div className='container-fluid'>
-              <textarea rows="17" className='form-text form-control bg-light container-fluid border-0 rounded-0 outline-none w-100' onChange={(e)=>{setcss(e.target.value)}}></textarea>
+              <textarea rows="17" className='form-text form-control bg-light container-fluid border-0 rounded-0 outline-none w-100' onChange={(e)=>{setCss(e.target.value)}}></textarea>
 
             </div>
           </div>
@@ -58,7 +63,7 @@ export default function Home() {
 
             </div>
             <div className='container-fluid'>
-              <textarea rows="17" className='form-text form-control bg-light container-fluid border-0 rounded-0 outline-none w-100' onChange={(e)=>{setjs(e.target.value)}}></textarea>
+              <textarea rows="17" className='form-text form-control bg-light container-fluid border-0 rounded-0 outline-none w-100' onChange={(e)=>{setJs(e.target.value)}}></textarea>
 
             </div>
           </div>
@@ -76,7 +81,7 @@ export default function Home() {
 
           </div>
           <div className="container-fluid">
-          <iframe id="output"></iframe>
+          <iframe id="output" ref={iframeRef}></iframe>
 
           </div>
         </div>
