@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test editer</title>
+</head>
+<style>
+    h3.question {
+        font-family: "Roboto", sans-serif;
+        font-size: 24px;
+        text-align: center;
+        font-weight: 100;
+    }
+
+    .editor-container {
+        width: 900px;
+        height: 540px;
+        margin: 20px auto;
+        position: absolute;
+    }
+
+    #editor {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <h3 class="question">Write a programm to
+        reverse a string in javascript</h3>
+    <div class="editor-container">
+        <div id="editor">//testing</div>
+    </div>
+</body>
+
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.18.0/ace.js"></script>
+<script>
+    let editor = document.querySelector("#editor");
+
+    ace.edit(editor, {
+        theme: "ace/theme/twilight",
+        mode:'ace/mode/html'
+        
+    })
+    ,editor.insert("Something cool");
+</script>
